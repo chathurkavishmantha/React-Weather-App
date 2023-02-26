@@ -4,7 +4,7 @@ import { getWeatherData } from "../../api";
 
 const Search = () => {
   const [weatherData, setWeatherData] = useState(null);
-  const [units, setunit] = useState("metric");
+  const [units] = useState("metric");
   const [city, setCity] = useState("colombo");
 
   useEffect(() => {
