@@ -31,9 +31,7 @@
  
 }
 
-.section, .flex-item{
-  display: flex;
-  justify-content: center;
+.section{
   width: 100%;
   padding: 1rem;
   border-radius: 0.4rem;
@@ -94,9 +92,8 @@
 }
 
 ::placeholder {
-  color: rgba(255, 255, 255, 0.479);
-  opacity: 1; /* Firefox */
-}
+    color: rgba(255, 255, 255, 0.479);
+  }
 
 @media only screen and (max-width: 390px) {
   .section-input>form>button{
