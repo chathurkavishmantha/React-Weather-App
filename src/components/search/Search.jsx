@@ -6,23 +6,38 @@ const Search = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [units] = useState("metric");
   const [city, setCity] = useState("colombo");
+  const [selectedData, setSelectedData] = useState('');
 
   useEffect(() => {
     const fetchWeatherData = async () => {
       const data = await getWeatherData(city, units);
-      console.log(data);
+      // console.log(data);
       setWeatherData(data);
     };
 
     fetchWeatherData();
-  }, [units, city]);
+  }, [city]);
 
-  const enterKeyPress = (e) => {
+  const enterKeyPressed = (e) => {
     if (e.keyCode === 13) {
-      // key code for enter key
+      // console.log(e.currentTarget.value);
+
       setCity(e.currentTarget.value);
       e.currentTarget.blur();
     }
+  };
+
+  const selectedDataInput = async (e) =>{
+    // console.log(e.target.value);
+    const value = await e.target.value;
+    // console.log(data);
+    setSelectedData(value);
+  }
+
+  const submitData = (e) => {
+    e.preventDefault();
+    // console.log(selectedData);
+    setCity(selectedData);
   };
 
   return (
@@ -36,16 +51,22 @@ const Search = () => {
       <div className="overlay">
         {weatherData && (
           <div className="containers">
+            
             <div className="section section-input">
-              <input
-                type="text"
-                name="city"
-                placeholder="Enter City"
-                onKeyDown={enterKeyPress}
-              />
-              <button>Find</button>
+            <form action="" onSubmit={submitData}>
+                <input
+                  type="text"
+                  name="city"
+                  placeholder="Enter City"
+                  onKeyDown={enterKeyPressed}
+                  onChange={selectedDataInput}
+                />
+                <button type="submit">
+                  Find
+                </button>
+                </form>
             </div>
-
+           
             <div className="section section-temperature">
               <div className="icon">
                 <h3>

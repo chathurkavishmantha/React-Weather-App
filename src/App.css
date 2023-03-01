@@ -46,7 +46,7 @@
   background-color: rgba(37, 136, 156, 0.773);
 }
 
-.section-input>input{
+.section-input>form>input{
   border: 0.8px solid;
   border-radius: 0.4rem;
   background-color: transparent;
@@ -60,7 +60,7 @@
   outline: none;
 }
 
-.section-input>button{
+.section-input>form>button{
   padding: 10px 50px;
   border: none;
   border-radius: 0.4rem;
@@ -89,4 +89,39 @@
 
 .temperature{
   font-size: 60px;
+}
+
+@media only screen and (max-width: 390px) {
+  .section-input>form>button{
+    padding: 10px auto;
+    margin-left: 5px;
+    font-size: 14px;
+    margin-top: 10px;
+    
+  }
+
+  .section-input>form>input{
+    padding: 0.5rem;
+    font-size: 14px;
+    font-weight: 200;    
+  }
+
+  ::placeholder {
+    color: rgba(255, 255, 255, 0.479);
+    opacity: 1; /* Firefox */
+  }
+
+  .section{
+    width: auto;
+  }
+
+  .containers{
+    width: auto;
+    margin: auto; 
+  }
+
+  .section-input, .section-temperature{
+    width: auto;
+  }
+  
 }
