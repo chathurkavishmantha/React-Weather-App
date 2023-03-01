@@ -53,7 +53,7 @@ const Search = () => {
           <div className="containers">
             
             <div className="section section-input">
-            <form action="" onSubmit={submitData}>
+            <form className="flex-item" action="" onSubmit={submitData}>
                 <input
                   type="text"
                   name="city"
